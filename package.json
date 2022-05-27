@@ -1,0 +1,28 @@
+{
+  "name": "qa-challenge-axel-loza",
+  "version": "1.0.0",
+  "description": "Repository of QA Challenge by Hugo Axel Loza",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Axel-Loza/QA-Challenge-Axel-Loza.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Axel-Loza/QA-Challenge-Axel-Loza/issues"
+  },
+  "homepage": "https://github.com/Axel-Loza/QA-Challenge-Axel-Loza#readme",
+  "devDependencies": {
+    "cypress": "^9.7.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions":true
+  }
+
+}
