@@ -1,0 +1,6 @@
+{
+    "textBoxEmailLoginPage":"#labeled-input-1",
+    "textBoxPasswordLoginPage":"#labeled-input-3",
+    "buttonLoginPage":"[data-gtm-id='start-email-login']",
+    "formLabelLoginPage":"#todoist_app"
+}
