@@ -4,3 +4,6 @@ Thumbs.db
 
 #Dependecies
 /node_modules
+
+#Env variables
+.env

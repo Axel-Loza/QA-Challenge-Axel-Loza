@@ -1,4 +1,4 @@
 {
-    "testFiles" : "**/*.feature"
+    "testFiles": "**/*.{feature,features}"
 
 }
