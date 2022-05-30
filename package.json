@@ -19,12 +19,11 @@
   "homepage": "https://github.com/Axel-Loza/QA-Challenge-Axel-Loza#readme",
   "devDependencies": {
     "cypress": "^9.7.0",
-    "cypress-cucumber-preprocessor": "^4.3.1"
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-dotenv": "^2.0.0",
+    "dotenv": "^16.0.1"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
-  },
-  "dependencies": {
-    "dotenv": "^16.0.1"
   }
 }
