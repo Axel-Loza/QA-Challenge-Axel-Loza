@@ -1,3 +1,11 @@
 {
-    "headerMainPage":"header"
+    "headerMainPage":"header",
+    "createNewTaskButton":"[d='M-4-3h24v24H-4z']",
+    "titleTaskTextbox":".public-DraftStyleDefault-block",
+    "dueTimeSelector":".item_due_selector > .date",
+    "todaySelectorOption":"[data-track='scheduler|date_shortcut_today']",
+    "submitTaskButton":"[data-testid='task-editor-submit-button'] > ._09c23660",
+    "agendaToday":"#agenda_view",
+    "goToInboxButton":"#filter_inbox",
+    "agendaInbox":".project_view"
 }
