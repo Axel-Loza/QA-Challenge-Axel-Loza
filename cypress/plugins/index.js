@@ -1,10 +1,8 @@
 /// <reference types="cypress" />
 
-//add cucumber constant
-const cucumber = require('cypress-cucumber-preprocessor').default;
-require('dotenv').config();
-
-
+// add cucumber constant
+const cucumber = require('cypress-cucumber-preprocessor').default
+require('dotenv').config()
 
 module.exports = (on, config) => {
   config.env.VALID_EMAIL = process.env.USER_EMAIL
@@ -14,4 +12,3 @@ module.exports = (on, config) => {
   on('file:preprocessor', cucumber())
   return config
 }
-

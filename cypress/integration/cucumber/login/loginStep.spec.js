@@ -1,40 +1,60 @@
-import { Given, And, When, Then } from "cypress-cucumber-preprocessor/steps";
-import homePage  from "../../../support/pages/homePage";
-import mainPage  from "../../../support/pages/mainPage";
-import loginPage  from "../../../support/pages/loginPage";
-Given('user enter in to the site', () => {
-    cy.visit("https://todoist.com/")
-})
-And('have valid login credentials', () => {
-})
+import { Given, And, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import HomePage from '../../../support/pages/HomePage'
+import MainPage from '../../../support/pages/MainPage'
+import LoginPage from '../../../support/pages/LoginPage'
 
-When('user need to login click on Login', () => {
-    homePage.clickOnLoginButton();
-})
-And('enter valid Email', () => {
-    loginPage.typeValidEmail();
-})
-And('enter valid Password', () => {
-    loginPage.typeValidPasswor();
- })
- Then('click Log in button', () => { 
-    loginPage.clickLoginButton();
- })
- And('the login to page is done succesfully', () => {
-    mainPage.validatesuccesfulLogin();
- })
-And('don`t have valid credentials', () => {
+//Scenario: User log succesfully on web platform
+
+Given('user enter in to the site', () => {
+  cy.visit("https://todoist.com/")
 })
 When('user click on Login', () => {
-    homePage.clickOnLoginButton();
+  HomePage.clickOnLoginButton()
 })
+And('enter valid Email', () => {
+  LoginPage.typeValidEmail()
+})
+And('enter valid Password', () => {
+  LoginPage.typeValidPassword()
+})
+Then('click Log in button', () => {
+  LoginPage.clickLoginButton()
+})
+And('the login to page is done succesfully', () => {
+  MainPage.validatesuccesfulLogin()
+})
+
+// Scenario: Try to login with invalid credentials 
+
 And('enter invalid credentials', () => {
-    loginPage.typeInvalidEmail();
-    loginPage.typeInvalidPasswor();
-    loginPage.clickLoginButton();
+  LoginPage.typeInvalidEmail()
+  LoginPage.typeInvalidPassword()
+  LoginPage.clickLoginButton()
 })
 Then('the login is unsuccesfully, label of incorrect credentials is showed', () => {
-    loginPage.validateWrongLogin();
- })
+  LoginPage.validateWrongLogin()
+})
 
+// Scenario: Try to login with no email
 
+And('enter login with no email', () => {
+    LoginPage.typeInvalidPassword()
+    LoginPage.clickLoginButton()
+  })
+
+Then('the login is unsuccesfully, label of no email is showed', () => {
+    LoginPage.clickLoginButton()
+    LoginPage.validateNoEmail()
+  })
+
+// Scenario: Try to login with no password
+
+  And('enter login with no password', () => {
+    LoginPage.typeInvalidEmail()
+    LoginPage.clickLoginButton()
+  })
+
+Then('the login is unsuccesfully, label of no password is showed', () => {
+    LoginPage.clickLoginButton()
+    LoginPage.validateNoPassword()
+  })
