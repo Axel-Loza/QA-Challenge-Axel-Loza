@@ -5,6 +5,11 @@ Thumbs.db
 
 #Dependecies
 /node_modules
+src/frontend/node_modules
 
 #Env variables
-*.env
+*.env   
+
+#reports
+*.mp4
+src/frontend/cypress/reports

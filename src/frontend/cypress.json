@@ -1,4 +1,14 @@
 {
-    "testFiles": "**/*.{feature,features}"
-    
+    "testFiles": "**/*.{feature,features}",
+    "screenshotOnRunFailure":true,
+    "reporter": "cypress-mochawesome-reporter",
+    "reporterOptions": {
+      "reportDir": "cypress/reports",
+      "charts": true,
+      "reportPageTitle": "SQA Challenge front test",
+      "reportFilename": "report",
+      "embeddedScreenshots": "true"
+    },
+    "screenshotsFolder": "cypress/reports/screenshots",
+    "videosFolder": "cypress/reports/videos"
 }
