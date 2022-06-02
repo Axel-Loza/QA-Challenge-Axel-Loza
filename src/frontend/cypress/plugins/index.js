@@ -1,8 +1,10 @@
 /// <reference types="cypress" />
 
 // add cucumber constant
+const path = require('path')
 const cucumber = require('cypress-cucumber-preprocessor').default
-require('dotenv').config()
+console.log('App is running on port: ', path.join(__dirname, '..', '..', '..', '..', '.env') );
+require('dotenv').config({path: path.join(__dirname, '..', '..', '..', '..', '.env')})
 
 module.exports = (on, config) => {
   config.env.VALID_EMAIL = process.env.USER_EMAIL
@@ -12,3 +14,4 @@ module.exports = (on, config) => {
   on('file:preprocessor', cucumber())
   return config
 }
+// /Users/hugo.loza/Documents/QA /Axel QA challenge/QA-Challenge-Axel-Loza/.env
