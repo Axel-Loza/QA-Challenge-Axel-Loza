@@ -1,8 +1,8 @@
 class MainPage {
   // Common
   validatesuccesfulLogin = (element) => {
-    cy.fixture('locatorsMain.json').then((locator) => {
-      cy.get(locator.headerMainPage).should('contain','Today')
+    return cy.fixture('locatorsMain.json').then((locator) => {
+      cy.get(locator.headerMainPage)
     })
   }
 
@@ -40,15 +40,15 @@ class MainPage {
   }
 
   validateTaskToday = (element) => {
-    cy.fixture('locatorsMain.json').then((locator) => {
-      cy.get(locator.agendaToday).should('contain',"test Task aut")
+    return cy.fixture('locatorsMain.json').then((locator) => {
+      cy.get(locator.agendaToday)
     })
   }
 
   validateTaskInbox = (element) => {
-    cy.fixture('locatorsMain.json').then((locator) => {
+    return cy.fixture('locatorsMain.json').then((locator) => {
       cy.get(locator.goToInboxButton).click()
-      cy.get(locator.agendaInbox).should('contain',"test Task aut")
+      cy.get(locator.agendaInbox)
     })
   }
 

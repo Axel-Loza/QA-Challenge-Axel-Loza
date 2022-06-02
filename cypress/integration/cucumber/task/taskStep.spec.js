@@ -23,10 +23,10 @@ And('click on Add Task button', () => {
   MainPage.clickSubmitTask()
 })
 Then('the task is created on today site', () => {
-  MainPage.validateTaskToday()
+  MainPage.validateTaskToday().should('contain',"test Task aut")
 })
 And('the task is created on inbox site', () => {
-  MainPage.validateTaskInbox()
+  MainPage.validateTaskInbox().should('contain',"test Task aut")
 })
 
 // Scenario Outline: Create multiple tasks and validate that they have been created successfully
@@ -41,14 +41,13 @@ And('click on Add Task button', () => {
   MainPage.clickSubmitTask()
 })
 Then('the task {string}{string} is created on today site', (Name, Number) => {
-  MainPage.validateMultiTaskToday().contains(Name + Number)
+  MainPage.validateMultiTaskToday().should('contain',Name + Number)
 })
 And('the task {string}{string} is created on inbox site', (Name, Number) => {
-  MainPage.validateMultiTaskInbox().contains(Name + Number)
+  MainPage.validateMultiTaskInbox().should('contain',Name + Number)
 })
 
 // Scenario Outline: Create multiple tasks in single session and validate that they have been created successfully
-
 When('user create {int} tasks', (Number) => {
 
   for (let i = 1; i <= Number; i++) {

@@ -30,20 +30,20 @@ class LoginPage {
   }
 
   validateWrongLogin = (element) => {
-    cy.fixture('locatorsLogin.json').then((locator) => {
-      cy.get(locator.formLabelLoginPage).should('contain','Wrong email or password.')
+    return cy.fixture('locatorsLogin.json').then((locator) => {
+      cy.get(locator.formLabelLoginPage)
     })
   }
 
   validateNoEmail = (element) => {
-    cy.fixture('locatorsLogin.json').then((locator) => {
-      cy.get(locator.formLabelLoginPage).should('contain','Please enter a valid email address.')
+    return cy.fixture('locatorsLogin.json').then((locator) => {
+      cy.get(locator.formLabelLoginPage)
     })
   }
 
   validateNoPassword = (element) => {
-    cy.fixture('locatorsLogin.json').then((locator) => {
-      cy.get(locator.formLabelLoginPage).should('contain','Passwords must be at least 8 characters long.')
+    return cy.fixture('locatorsLogin.json').then((locator) => {
+      cy.get(locator.formLabelLoginPage)
     })
   }
   login = (element) => {

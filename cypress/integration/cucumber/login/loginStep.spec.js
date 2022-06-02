@@ -21,7 +21,7 @@ Then('click Log in button', () => {
   LoginPage.clickLoginButton()
 })
 And('the login to page is done succesfully', () => {
-  MainPage.validatesuccesfulLogin()
+  MainPage.validatesuccesfulLogin().should('contain','Today')
 })
 
 // Scenario: Try to login with invalid credentials 
@@ -32,7 +32,7 @@ And('enter invalid credentials', () => {
   LoginPage.clickLoginButton()
 })
 Then('the login is unsuccesfully, label of incorrect credentials is showed', () => {
-  LoginPage.validateWrongLogin()
+  LoginPage.validateWrongLogin().should('contain','Wrong email or password.')
 })
 
 // Scenario: Try to login with no email
@@ -44,7 +44,7 @@ And('enter login with no email', () => {
 
 Then('the login is unsuccesfully, label of no email is showed', () => {
     LoginPage.clickLoginButton()
-    LoginPage.validateNoEmail()
+    LoginPage.validateNoEmail().should('contain','Please enter a valid email address.')
   })
 
 // Scenario: Try to login with no password
@@ -56,5 +56,5 @@ Then('the login is unsuccesfully, label of no email is showed', () => {
 
 Then('the login is unsuccesfully, label of no password is showed', () => {
     LoginPage.clickLoginButton()
-    LoginPage.validateNoPassword()
+    LoginPage.validateNoPassword().should('contain','Passwords must be at least 8 characters long.')
   })
