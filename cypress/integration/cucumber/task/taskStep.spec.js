@@ -30,10 +30,10 @@ And('the task is created on inbox site', () => {
 })
 
 // Scenario Outline: Create multiple tasks and validate that they have been created successfully
-And("type the name {string}{string} for the task", 
-function (Name,Number) {
-  MainPage.typeMultiTaskName().type(Name + Number);
-})
+And("type the name {string}{string} for the task",
+  function (Name, Number) {
+    MainPage.typeMultiTaskName().type(Name + Number);
+  })
 And('select the day as today', () => {
   MainPage.selectTodayDate()
 })
@@ -45,4 +45,28 @@ Then('the task {string}{string} is created on today site', (Name, Number) => {
 })
 And('the task {string}{string} is created on inbox site', (Name, Number) => {
   MainPage.validateMultiTaskInbox().contains(Name + Number)
+})
+
+// Scenario Outline: Create multiple tasks in single session and validate that they have been created successfully
+
+When('user create {int} tasks', (Number) => {
+
+  for (let i = 1; i <= Number; i++) {
+    MainPage.clickOnCreateNewTask()
+    MainPage.typeMultiTaskName().type("test task " + i);
+    MainPage.selectTodayDate()
+    MainPage.clickSubmitTask()
+  }
+})
+
+Then('all the {int} tasks are created on today site', (Number) => {
+  for (let i = 1; i <= Number; i++) {
+    MainPage.validateMultiTaskToday().should('contain',"test task " + i)
+  }
+  
+})
+And('all the {int} tasks are created on inbox site', (Number) => {
+  for (let i = 1; i <= Number; i++) {
+    MainPage.validateMultiTaskInbox().should('contain',"test task " + i)
+  }
 })

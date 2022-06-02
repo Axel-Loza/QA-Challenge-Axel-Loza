@@ -25,3 +25,13 @@ Scenario Outline: Create multiple tasks and validate that they have been created
     |multiTask |   +3   |
     |multiTask |   +4   | 
     |multiTask |   +5   |
+
+Scenario Outline: Create multiple tasks in single session and validate that they have been created successfully
+    Given user login to the site
+    When user create <Number> tasks
+    Then all the <Number> tasks are created on today site
+    And all the <Number> tasks are created on inbox site
+
+    Examples:
+    | Number |
+    |5|
