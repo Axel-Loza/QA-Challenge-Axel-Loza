@@ -5,7 +5,7 @@ Thumbs.db
 
 #Dependecies
 /node_modules
-src/frontend/node_modules
+package-lock.json
 
 #Env variables
 *.env   

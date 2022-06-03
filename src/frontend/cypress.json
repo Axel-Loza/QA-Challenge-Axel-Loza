@@ -1,14 +1,19 @@
 {
-    "testFiles": "**/*.{feature,features}",
-    "screenshotOnRunFailure":true,
-    "reporter": "cypress-mochawesome-reporter",
-    "reporterOptions": {
-      "reportDir": "cypress/reports",
-      "charts": true,
-      "reportPageTitle": "SQA Challenge front test",
-      "reportFilename": "report",
-      "embeddedScreenshots": "true"
-    },
-    "screenshotsFolder": "cypress/reports/screenshots",
-    "videosFolder": "cypress/reports/videos"
+  "integrationFolder": "./src/frontend/cypress/integration/",
+  "pluginsFile": "./src/frontend/cypress/plugins/",
+  "fixturesFolder": "./src/frontend/cypress/fixtures",
+  "reportsFolder": "./src/frontend/cypress/reports",
+  "screenshotsFolder": "./src/frontend/cypress/reports/screenshots",
+  "videosFolder": "./src/frontend/cypress/reports/videos",
+  "testFiles": "**/*.feature",
+  "screenshotOnRunFailure": true,
+  "reporter": "cypress-mochawesome-reporter",
+  "reporterOptions": {
+    "reportDir": "./src/frontend/cypress/reports",
+    "charts": true,
+    "reportPageTitle": "SQA Challenge front test",
+    "reportFilename": "report",
+    "embeddedScreenshots": "true"
+  },
+  "supportFile": "./src/frontend/cypress/support"
 }

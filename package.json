@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "cypress open",
-    "cypress:headless": "cypress run"
+    "cypress:open": "cypress open --config-file ./src/frontend/cypress.json",
+    "cypress:headless": "cypress run --config-file ./src/frontend/cypress.json"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "eslint-plugin-promise": "^6.0.0"
   },
   "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true
+    "nonGlobalStepDefinitions": true,
+    "step_definitions": "./src/frontend/cypress/integration"
   }
 }
