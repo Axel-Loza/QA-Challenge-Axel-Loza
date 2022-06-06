@@ -32,6 +32,13 @@ pipeline{
     }
     
     post{
-        
+        success {
+            echo 'success!'
+            slackSend color: "#11cd4b", channel: "#sqa-challenge-axel", message: "*Build Passed"
+            }
+        failure {
+            echo 'marked as failure'
+            slackSend color: "#F50407", channel: "#sqa-challenge-axel", message: "*Build Failed"
+            }
     }
 }
