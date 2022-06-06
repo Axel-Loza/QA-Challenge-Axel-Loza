@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open --config-file ./src/frontend/cypress.json",
-    "cypress:headless": "cypress run --config-file ./src/frontend/cypress.json"
+    "cypress:headless": "cypress run --config-file ./src/frontend/cypress.json",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "dotenv": "^16.0.1",
     "eslint": "^8.16.0",
     "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-promise": "^6.0.0"

@@ -11,5 +11,4 @@ package-lock.json
 *.env   
 
 #reports
-*.mp4
 src/frontend/cypress/reports
