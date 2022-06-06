@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     tools {nodejs "nodejs"} 
-    
+
     stages{
         stage('Build'){
             steps{
@@ -17,14 +17,14 @@ pipeline{
         stage('EsLint'){
             steps{
                 echo "running EsLint"
-                sh 'npm lint'
+                sh 'npm run lint'
             }
         }
 
         stage('Frontend'){
             steps{
                 echo "running frontend test"
-                sh 'npm cypress:headless '
+                sh 'npm run cypress:headless '
             }
         }
     }
