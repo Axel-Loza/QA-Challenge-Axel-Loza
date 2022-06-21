@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open --config-file ./src/frontend/cypress.json",
     "cypress:headless": "cypress run --config-file ./src/frontend/cypress.json",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "APItest":"newman run src/backend/collections/Test Todoist API.postman_collection.json -r htmlextra",
+    "runTest":"cd src/backend/runner && node runner.js"
   },
   "repository": {
     "type": "git",
@@ -35,5 +37,9 @@
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
     "step_definitions": "./src/frontend/cypress/integration"
+  },
+  "dependencies": {
+    "newman": "^5.3.2",
+    "newman-reporter-htmlextra": "^1.22.9"
   }
 }

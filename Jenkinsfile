@@ -4,6 +4,12 @@ pipeline{
     tools {nodejs "nodejs"} 
 
     stages{
+        stage("Env Variables"){
+            steps{
+                sh 'printenv'                                               
+            }
+        }
+
         stage('Build'){
             steps{
                 echo "Installing dependecies:"
@@ -18,6 +24,13 @@ pipeline{
             steps{
                 echo "running EsLint"
                 sh 'npm run lint'
+            }
+        }
+
+        stage('backend'){
+            steps{
+                echo "running backend test"
+                sh 'npm run runTest'
             }
         }
 
